@@ -60,7 +60,7 @@ bool q_insert_head(queue_t *q, char *s)
                 return true;
             } else {
                 free(newh);
-                return false
+                return false;
             }
         } else {
             return false;
