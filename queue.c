@@ -56,6 +56,9 @@ bool q_insert_head(queue_t *q, char *s)
             if (newh->value != NULL) {
                 memcpy(newh->value, s, length);
                 newh->next = q->head;
+                if (q->size == 0) {
+                    q->tail = newh;
+                }
                 q->head = newh;
                 q->size++;
                 return true;
