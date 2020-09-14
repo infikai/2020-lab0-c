@@ -52,7 +52,7 @@ bool q_insert_head(queue_t *q, char *s)
         newh = malloc(sizeof(list_ele_t));
         if (newh != NULL) {
             int length;
-            length = strlen(s);
+            length = strlen(s) + 1;
             newh->value = malloc(length * sizeof(char));
             if (newh->value != NULL) {
                 memcpy(newh->value, s, length);
