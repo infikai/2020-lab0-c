@@ -12,14 +12,15 @@
 queue_t *q_new()
 {
     queue_t *q = malloc(sizeof(queue_t));
-    /* TODO: What if malloc returned NULL? */
     if (q == NULL) {
         printf("Error! Allocation was failed. \n");
         return q;
+    } else {
+        q->head = NULL;
+        q->tail = NULL;  // Add for the q_insert_tail
+        q->size = 0;
+        return q;
     }
-    q->head = NULL;
-    q->tail = NULL;  // Add for the q_insert_tail
-    return q;
 }
 
 /* Free all storage used by queue */
