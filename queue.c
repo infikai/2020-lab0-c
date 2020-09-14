@@ -128,7 +128,7 @@ bool q_remove_head(queue_t *q, char *sp, size_t bufsize)
 {
     if (q->size != 0) {
         if (sp != NULL) {
-            memcpy(sp, head->value, bufsize - 1);
+            memcpy(sp, q->head->value, bufsize - 1);
             sp[bufsize - 1] = '\0';
         }
         list_ele_t *next;
@@ -140,6 +140,7 @@ bool q_remove_head(queue_t *q, char *sp, size_t bufsize)
             q->tail = NULL;
         }
         q->size--;
+        return true;
     } else {
         return false;
     }
